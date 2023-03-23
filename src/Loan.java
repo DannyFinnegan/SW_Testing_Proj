@@ -59,7 +59,8 @@ Loan {
     public double getTotalPayment() {
         double totalPayment;
         totalPayment = getMonthlyPayment() * numberOfPayments;
-        return totalPayment;
+        //Code edited to return 2 decimal places
+        return Math.round(totalPayment*100.0)/100.0 ;
     }
 
     //Sets the loan amount of this loan.

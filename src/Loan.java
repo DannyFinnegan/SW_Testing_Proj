@@ -52,7 +52,7 @@ Loan {
                 / (1 - Math.pow(1 / (1 + monthlyInterestRate),
                 numberOfPayments));
         //Monthly payment had to be formatted to return a number to 2 decimal places
-        return Math.round(monthlyPayment*100.0)/100.0;
+        return Math.round(monthlyPayment * 100.0) / 100.0;
     }
 
     //Returns the total payment
@@ -60,7 +60,7 @@ Loan {
         double totalPayment;
         totalPayment = getMonthlyPayment() * numberOfPayments;
         //Code edited to return 2 decimal places
-        return Math.round(totalPayment*100.0)/100.0 ;
+        return Math.round(totalPayment * 100.0) / 100.0;
     }
 
     //Sets the loan amount of this loan.
@@ -75,7 +75,7 @@ Loan {
     }
 
     //Sets the interest rate of this loan.
-    private void setRate(int period) {
+    private double setRate(Integer period) {
 
         if ((loanAmount >= 500) && (loanAmount <= 5000)) {
             if (period >= 1 && period <= 3) {
@@ -97,6 +97,8 @@ Loan {
         }
 
         monthlyInterestRate = annualRate / 100.0 / MONTHS_IN_YEAR;
+
+        return monthlyInterestRate;
     }
 
     //Sets the loan period of this loan.
